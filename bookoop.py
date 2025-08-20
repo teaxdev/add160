@@ -1,7 +1,4 @@
 # Book Object Oriented Programming Assignment
-
-print("test")
-
 class Book():
     def __init__(self, title, author, pages):
         self.title = title
@@ -12,15 +9,22 @@ book1 = Book("Percy Jackson, The Lightning Thief", "Rick Riordan", "377")
 book2 = Book("Percy Jackson, The Sea Of Monsters", "Rick Riordan", "279")
 book3 = Book("Percy Jackson, The Titan's Curse", "Rick Riordan", "213")
 
+tup = (book1, book2, book3)
 def display_details():
-    for i in Book:
-        print(f"")
-        i += 1
-    print(f"Title: {book1.title}, Author: {book1.author}, Pages: {book1.pages}")
-    print(book2.title, book2.author, book2.pages)
-    print(book3.title, book3.author, book3.pages)
+    count = 1
+    if count == 1:
+        print(f"Title: {book1.title}, Author: {book1.author}, Pages: {book1.pages}")
+        count += 1
+        return count
+    elif count == 2:
+        print(f"Title: {book2.title}, Author: {book2.author}, Pages: {book2.pages}")
+        count += 1
+        return count
+    else:
+        print(f"Title: {book3.title}, Author: {book3.author}, Pages: {book3.pages}")
     
-display_details()
+    
+display = display_details()
 
 def is_long_book():
     if int(book1.pages) >= 100:
@@ -28,5 +32,11 @@ def is_long_book():
     else:
         print("False")
 
-is_long_book()
+def main():
+    i = 1
+    while i <= 3:
+        display_details()
+        is_long_book()
+        i += 1
 
+main()
