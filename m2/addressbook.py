@@ -16,9 +16,9 @@ class AddressBook():
     phone: int -- the users phone number
 
     Methods:
-    __str__
-    __repr__
-    __eq__
+    __str__: Turns objects into strings
+    __repr__: 
+    __eq__: Checks to see if 2 objects are equal
     """
     def __init__(self, first_name, last_name, birthday, email,
                    street_address, city, state, zip, phone):
