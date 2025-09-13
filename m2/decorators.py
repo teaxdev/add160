@@ -1,15 +1,18 @@
 # OOP 2.4 Decorators
 
 class TimingDecorator():
-    def __init__(self, func):
+    def __init__(self, func, start_time, end_time):
         self.func = func
-
-    def __call__(self, start_time, call_func, end_time, exec_time, result):
         self.start_time = start_time
-        self.call_func = call_func
         self.end_time = end_time
-        self.exec_time = exec_time
-        self.result = result
+
+    def __call__(self, *args, **kwargs):
+        start_time = self.start_time.time() 
+        call_func = self.func(*args, **kwargs)
+        end_time = self.end_time.time()
+        print(f"Function {self.func.__name__} took {end_time - start_time:.4f} seconds to execute")
+        return call_func
+        # result = call_func
 
 @TimingDecorator
 def compute(x):
