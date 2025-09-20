@@ -8,7 +8,7 @@ class Car:
     @property
     def make(self):
         return self._make
-
+    
     @make.setter
     def make(self, value):
         self._make = value
@@ -55,6 +55,13 @@ my_car.add_gas(10)
 print(my_car.car_info())  # Output: Make: Chevrolet, Model: Corvette, Tank Size: 18 gallons, Gas Level: 15 gallons
 
 def change():
-    print("help")
-
+    # try:
+    #     print(f"my_car._make = {my_car._make}") 
+    # except AssertionError:
+    #     print("AssertionError: Cannot access private attribute '_make' directly")
+        
+    try:
+        my_car._make = "Toyota"
+    except AttributeError as e:
+        print(f"Error: {e}")
 change()
