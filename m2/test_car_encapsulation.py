@@ -62,6 +62,11 @@ def change():
         
     try:
         my_car._make = "Toyota"
-    except AttributeError as e:
+
+        assert my_car.make == "Ford", f"Expected 'Ford', got'{my_car._make}'"
+        assert my_car.model == "Mustang", f"Expected 'Mustang', got'{my_car._model}'"
+    except AssertionError as e:
+
         print(f"Error: {e}")
+        print(my_car.gas_level)
 change()
