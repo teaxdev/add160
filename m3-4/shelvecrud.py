@@ -2,7 +2,12 @@
 
 import shelve
 
-address_book = {}
+
+def load_address_book():
+    with shelve.open('address_book') as db:
+        return dict(db)
+
+address_book = load_address_book()
 
 # with shelve.open('address_book') as db:
 #     db['book_id'] = address_book
