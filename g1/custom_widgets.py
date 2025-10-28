@@ -3,7 +3,7 @@ import tkinter as tk
 # Create the main window
 root = tk.Tk()
 root.title("Events")
-root.geometry("280x300")
+root.geometry("280x200")
 
 # Create a frame to hold the widgets
 frame = tk.Frame(root)
@@ -43,7 +43,7 @@ def count():
     c += 1
     count_label.config(text=f"You have clicked this button {c} times")
 
-button = tk.Button(root, text="count", command=count)
+button = tk.Button(root, text="count", command=count, cursor="hand2")
 button.pack(pady=20)
 
 # Start the main event loop
